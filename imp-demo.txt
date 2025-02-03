@@ -1,0 +1,497 @@
+{
+    "username":"KCR",
+    "password":"KCR123",
+    "email":"KCR123@gamil.com",
+    "role":"admin"  
+}
+
+
+
+{
+    "username":"KCR",
+    "password":"KCR123"  
+}
+
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OWY0ZDAxMzk5YzQ2ZWYzNWMzYTNmNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODQ5MzM4Mn0.Z9HMjRFc3l-EJ4NKjtIax26FfUIwYapRpZSVdJoXqAE
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OWY0ZDAxMzk5YzQ2ZWYzNWMzYTNmNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODQ5NzI3M30.ti_XeSKwBw1iPyqMownZ8q1PVULefln0yaCIC4hi594
+
+
+http://localhost:3021/event/create
+
+{
+    "amountrange": 10,
+    "eventname": "medak-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0,
+    "userId": "679f4d01399c46ef35c3a3f4",
+    "_id": "679f4ec2399c46ef35c3a3f7",
+    "__v": 0
+}
+
+==============================================================================
+
+http://localhost:3021/event/create
+
+
+{
+    "amountrange": 10,
+    "eventname": "siddipet-function",
+    "eventdate": "2043-02-03T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0,
+    "userId": "679f4d01399c46ef35c3a3f4",
+    "_id": "679f4f60399c46ef35c3a3f9",
+    "__v": 0
+}
+
+
+
+==============================================================================
+
+http://localhost:3021/auth/register
+
+{
+    "username":"KTR",
+    "password":"KTR123",
+    "email":"KTR123@gamil.com",
+    "role":"user"  
+}
+
+http://localhost:3021/auth/login
+
+{
+    "username":"KTR",
+    "password":"KTR123"
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OWY1MDFkMzk5YzQ2ZWYzNWMzYTNmYyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4NDk0MDkxfQ.IB9Lgtd9WwyYMmNF7Gq13On_vh0Iz9YX9Qb31Gg3PCw
+
+=============================================================================
+
+KTR-Location
+-------------------->
+
+POST : http://localhost:3021/event/location
+
+
+
+{
+    "eventneedlocation": "hhh",
+    "_id": "679f5ef7c6f2bf14078bd556",
+    "__v": 0
+}
+
+
+=============================================================================
+
+KTR-GET-AFTER-LOCATION :
+--------------------------->
+
+GET: http://localhost:3021/event/get
+
+[
+    {
+        "_id": "679f4ec2399c46ef35c3a3f7",
+        "amountrange": 10,
+        "eventname": "medak-function",
+        "eventdate": "2043-02-10T00:00:00.000Z",
+        "eventlocation": "hhh",
+        "eventtime": "18:15:10",
+        "totalseats": 100,
+        "availableseats": 100,
+        "bookedseats": 0,
+        "userId": "679f4d01399c46ef35c3a3f4",
+        "__v": 0
+    },
+    {
+        "_id": "679f4f60399c46ef35c3a3f9",
+        "amountrange": 10,
+        "eventname": "siddipet-function",
+        "eventdate": "2043-02-03T00:00:00.000Z",
+        "eventlocation": "hhh",
+        "eventtime": "18:15:10",
+        "totalseats": 100,
+        "availableseats": 100,
+        "bookedseats": 0,
+        "userId": "679f4d01399c46ef35c3a3f4",
+        "__v": 0
+    }
+]
+
+=============================================================================
+
+
+POST :  http://localhost:3021/event/eventit/679f4ec2399c46ef35c3a3f7
+
+{
+   
+"eventStatus": "Booked",
+    "NoOfSeatsBooking": 5
+}
+
+
+{
+    "eventid": "679f4ec2399c46ef35c3a3f7",
+    "amountrange": 10,
+    "eventname": "medak-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "eventManager": "KCR",
+    "eventManagerEmail": "KCR123@gamil.com",
+    "eventStatus": "Booked",
+    "eventBookedBy": "KTR",
+    "email": "KTR123@gamil.com",
+    "NoOfSeatsBooking": 5,
+    "AmountNeedPay": 50,
+    "userId": "679f501d399c46ef35c3a3fc",
+    "_id": "679f611ac6f2bf14078bd55e",
+    "__v": 0
+}
+
+
+=============================================================================
+
+GET :
+
+http://localhost:3021/event/all
+
+
+
+[
+    {
+        "_id": "679f611ac6f2bf14078bd55e",
+        "eventid": "679f4ec2399c46ef35c3a3f7",
+        "amountrange": 10,
+        "eventname": "medak-function",
+        "eventdate": "2043-02-10T00:00:00.000Z",
+        "eventlocation": "hhh",
+        "eventtime": "18:15:10",
+        "eventManager": "KCR",
+        "eventManagerEmail": "KCR123@gamil.com",
+        "eventStatus": "Booked",
+        "eventBookedBy": "KTR",
+        "email": "KTR123@gamil.com",
+        "NoOfSeatsBooking": 5,
+        "AmountNeedPay": 50,
+        "userId": "679f501d399c46ef35c3a3fc",
+        "__v": 0
+    }
+]
+
+
+==========================================================================================================================================================
+
+{
+    
+    "username":"Central",
+    "password":"Central123",
+    "email":"Central123@gamil.com",
+    "role":"admin"  
+}
+
+
+{
+    "username":"Central",
+    "password":"Central123"
+}
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA1NjQ1ODkyZWE5NDA4NmIxODQxMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU2MTE3N30.Nfn0eI4bbVqsbBKKUaZlXvvTP1jW-4b5TqeMId88hnU
+
+
+
+{
+    "amountrange": 10,
+    "eventname": "PM-HOUSING-function",
+    "eventdate": "2043-02-10",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0
+}
+
+
+
+
+{
+    "amountrange": 10,
+    "eventname": "PM-HOUSING-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0,
+    "userId": "67a05645892ea94086b18410",
+    "_id": "67a0572d892ea94086b18413",
+    "__v": 0
+}
+
+==========================================================================================================================================================
+
+{
+    "amountrange": 10,
+    "eventname": "PM-Sports-function",
+    "eventdate": "2043-02-10",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0
+}
+
+
+{
+    "amountrange": 10,
+    "eventname": "PM-Sports-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "totalseats": 100,
+    "availableseats": 100,
+    "bookedseats": 0,
+    "userId": "67a05645892ea94086b18410",
+    "_id": "67a0585c892ea94086b18415",
+    "__v": 0
+}
+
+
+==========================================================================================================================================================
+
+
+{
+    "username":"TS",
+    "password":"TS123",
+    "email":"TS123@gamil.com",
+    "role":"user"  
+}
+
+
+{
+    
+    "username":"TS",
+    "password":"TS123"
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA1ZDExMjliMGVjMDg2YTZlMWE1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4NTYyODc5fQ.tomPBC3tdkotg7bD6lwYknAFp7D0jRH7MnI9vkggln8
+
+
+{
+    "eventneedlocation": "hhh",
+    "userId": "67a05d1129b0ec086a6e1a54",
+    "_id": "67a05de129b0ec086a6e1a59",
+    "__v": 0
+}
+
+{
+   
+"eventStatus": "Booked",
+    "NoOfSeatsBooking": 5
+}
+
+http://localhost:3021/event/eventit/67a0572d892ea94086b18413
+
+
+{
+    "eventid": "67a0572d892ea94086b18413",
+    "amountrange": 10,
+    "eventname": "PM-HOUSING-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "eventManager": "Central",
+    "eventManagerEmail": "Central123@gamil.com",
+    "eventBookedBy": "TS",
+    "email": "TS123@gamil.com",
+    "NoOfSeatsBooking": 5,
+    "AmountNeedPay": 50,
+    "userId": "67a05d1129b0ec086a6e1a54",
+    "_id": "67a0603c610a74620a79169d",
+    "__v": 0
+}
+
+
+{
+    "eventid": "67a0585c892ea94086b18415",
+    "amountrange": 10,
+    "eventname": "PM-Sports-function",
+    "eventdate": "2043-02-10T00:00:00.000Z",
+    "eventlocation": "hhh",
+    "eventtime": "18:15:10",
+    "eventManager": "Central",
+    "eventManagerEmail": "Central123@gamil.com",
+    "eventBookedBy": "TS",
+    "email": "TS123@gamil.com",
+    "NoOfSeatsBooking": 3,
+    "AmountNeedPay": 30,
+    "userId": "67a05d1129b0ec086a6e1a54",
+    "_id": "67a0640f610a74620a7916b3",
+    "__v": 0
+}
+
+=========================================================>
+
+{
+    "username":"TN",
+    "password":"TN123",
+    "email":"TN123@gamil.com",
+    "role":"user"  
+}
+
+
+{
+    "username":"TN",
+    "password":"TN123"
+}
+
+
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA2MjFkNjEwYTc0NjIwYTc5MTZhNyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM4NTY0MjIyfQ.zTq8VkM6gsmURR6ejlJQvalUaDGFAxQicRDbVT8bT-A
+
+
+
+=========================================================>=========================================================>=========================================================>=========================================================>=========================================================>=========================================================>
+
+
+
+
+{
+    "username":"TDP",
+    "password":"TDP123",
+    "email":"TDP123@gamil.com",
+    "role":"admin"  
+}
+
+
+{
+    "username":"TS",
+    "password":"TS123"
+}
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA4MDMxN2IwMjViYjkzMGUzNjE4NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU3MjgxM30.3kla9ZYh9XznO70Rf9_BpdOXpVaCCiHVnc7SWwy9x-Q
+
+
+
+
+
+
+
+
+
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA1NjQ1ODkyZWE5NDA4NmIxODQxMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU3NzE0NH0.vyuiVZOGf70Rb6QdrudV7YtpnWdrdsoD4EbwinDw0qw
+
+
+
+
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTA5OTQ0YTIxMzgyODQxZGQ4YmU0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU3ODI5M30.O2qcYS8_Xg1RLU1Ln7Qaxz6_pOVWKAH0XvQ-mUIyFuo
+
+
+export const login = async (request, reply) => {
+    const { username, password } = request.body;
+    try {
+        const user = await User.findOne({ username });
+        if (!user) {
+            return reply.status(400).send({ error: 'User not found' });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return reply.status(400).send({ error: 'Invalid credentials' });
+
+        const payload = { id: user._id, role: user.role };
+        const token = jwt.sign(payload, process.env.SEC);
+
+        // Check if there's an existing session (log entry)
+        const existingLog = await Logs.findOne({ UserId: user._id, UserToken: { $ne: null } });
+
+        if (!existingLog) {
+            const newLog = new Logs({
+                UserId: user._id,
+                logintime: Date.now(),
+                logouttime: null,
+                UserToken: token
+            });
+            await newLog.save();
+        } else {
+            // If a session exists, just update the log with the new token
+            existingLog.UserToken = token;
+            existingLog.logintime = Date.now();
+            existingLog.logouttime = null;
+            await existingLog.save();
+        }
+
+        reply.status(200).send({ token });
+
+    } catch (err) {
+        console.error('Error during login:', err);
+        reply.status(500).send({ error: 'Error while logging in the user' });
+    }
+};
+
+
+
+logout controller :
+
+========================>
+export const logout = async (request, reply) => {
+    try {
+        const authHeader = request.headers['authorization'];
+        const token = authHeader && authHeader.split(' ')[1];
+
+        if (!token) {
+            return reply.status(401).send({ error: 'Token required for logging out' });
+        }
+
+        const decoded = jwt.verify(token, process.env.SEC);
+        const userId = decoded.id;
+
+        // Find the user's existing log entry with the given token and UserId
+        const userlogs = await Logs.findOne({ UserId: userId, UserToken: token });
+
+        if (!userlogs) {
+            return reply.status(401).send({ error: 'No active session found for this token' });
+        }
+
+        // Update the existing log entry with logout time and nullify the UserToken
+        userlogs.logouttime = Date.now();
+        userlogs.UserToken = null; // Or use "" if you prefer empty string
+
+        await userlogs.save();
+
+        reply.send({ message: 'User logged out successfully' });
+
+    } catch (err) {
+        console.log('Error during logout:', err);
+        reply.status(500).send({ error: 'Error while logging out the current user' });
+    }
+};
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTBhMDM3NDgzYmUyZWExYTUwNzcyNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU4MDM2NH0.Z86BKA7rK46_DS0f8kWVipZ1u7ABnOmR-axDMaKC3qk
+
+=======================================>
+
+{
+    
+    "username":"MAC",
+    "password":"MAC123"
+}
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTBhZDZjZWFiNjA1YzIyM2E1OTZhNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODU4MzQ2Mn0.tlFMAY-NQo6gA3jHWPaeIFqsux-DsipQ_SsnWKSTqOU
+
